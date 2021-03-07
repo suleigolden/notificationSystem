@@ -1,13 +1,13 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 
-//Import notification router
-import userRouter from './routes/notification.js';
+//Import subscriber router
+import userRouter from './routes/subscriber.js';
 
 const app = express();
 app.use(bodyParser.json());
 
-app.use('/notification', userRouter);
+app.use('/subscriber', userRouter);
 app.get('/', (req, res) => {
     //console.log(req);
     res.send('<h1>Hello</h1>')
