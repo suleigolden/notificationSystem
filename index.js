@@ -7,7 +7,7 @@ import userRouter from './routes/subscriber.js';
 const app = express();
 app.use(bodyParser.json());
 
-app.use('/subscriber', userRouter);
+app.use('/subscribe', userRouter);
 app.get('/', (req, res) => {
     //console.log(req);
     res.send('<h1>Hello</h1>')
