@@ -11,12 +11,14 @@ router.get('/', (req, res) => {
 
 //Publisher Server Endpoint
 router.post('/', (req, res) => {
+     res.setHeader('Content-Type', 'application/json');
      const notify = req.body;
      if(notify){
+          console.log(notify);
           notification.push(notify);
-          res.send(`notification  added successfuly.. ${notify.topic}`);
+          res.end(JSON.stringify({ topic: notify.topic, url: notify.body, }));
      }else{
-          res.send(500);
+          res.end(JSON.stringify({ error: 500 }));
      }
     
  });
