@@ -12,8 +12,13 @@ router.get('/', (req, res) => {
 //Publisher Server Endpoint
 router.post('/', (req, res) => {
      const notify = req.body;
-     notification.push(notify);
-     res.send(`notification  added successfuly.. ${user.message}`);
+     if(notify){
+          notification.push(notify);
+          res.send(`notification  added successfuly.. ${notify.topic}`);
+     }else{
+          res.send(500);
+     }
+    
  });
 
 
